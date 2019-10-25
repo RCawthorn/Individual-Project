@@ -1,0 +1,273 @@
+<html>
+
+<body>
+
+<!-- Dopdown menu  -->
+
+  <div class="bg"></div>
+  <div class="dropdown">
+    <font face="courier">
+      <button onclick="myFunction()" class="dropbtn">Menu</button>
+      <div id="myDropdown" class="dropdown-content">
+        <a class="font" href="Front.html">Home</a>
+        <button onclick="document.getElementById('id01').style.display='block'" style="float:right;">Login</button>
+        <a class="dropbtn" href="Booking.html">Bookings</a>
+    </font>
+  </div>
+  </div>
+</body>
+   <style>
+      .font {
+        font-family: Arial;
+        background-color: #0f730b;
+      }
+
+      .dropbtn {
+        font-family: Arial;
+        background-color: #0f730b;
+        color: white;
+        padding: 16px;
+        font-size: 16px;
+        border: none;
+        cursor: pointer;
+
+      }
+
+      .dropbtn:hover,
+      .dropbtn:focus {
+        background-color: #179e11;
+      }
+
+      .dropdown {
+        position: relative;
+        display: inline-block;
+      }
+
+      .dropdown-content {
+	     background-color: #0f730b;
+        font-family: Arial;
+        display: none;
+        position: absolute;
+
+        min-width: 160px;
+        overflow: auto;
+        box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+        z-index: 1;
+      }
+
+      .dropdown-content a {
+        font-family: Arial;
+        color: black;
+        padding: 12px 16px;
+        text-decoration: none;
+        display: block;
+      }
+
+      .dropdown a:hover {
+        background-color: #179e11;
+      }
+
+      .show {
+        display: block;
+      }
+    </style>
+    <script>
+      /* When the user clicks on the button, 
+      toggle between hiding and showing the dropdown content */
+      function myFunction() {
+        document.getElementById("myDropdown").classList.toggle("show");
+      }
+
+      // Close the dropdown if the user clicks outside of it
+      window.onclick = function (event) {
+        if (!event.target.matches('.dropbtn')) {
+          var dropdowns = document.getElementsByClassName("dropdown-content");
+          var i;
+          for (i = 0; i < dropdowns.length; i++) {
+            var openDropdown = dropdowns[i];
+            if (openDropdown.classList.contains('show')) {
+              openDropdown.classList.remove('show');
+            }
+          }
+        }
+      }
+    </script>
+
+<!-- On screen messages -->
+
+
+ <body>
+<div class="bgimg">
+  <div class="topleft">
+  <b>
+    <p>Village Hotel</p>
+  </div>
+  <div class="middle">
+    <h1>COMING SOON</h1>
+    <hr>
+    <p id="demo" style="font-size:30px"></p>
+  </div>
+ 
+  <div class="bottomleft">
+    <p>Be there or be square</p></b>
+  </div>
+  <div class="container1" onclick="myFunction1(this)" >
+  <div class="bar1"></div>
+  <div class="bar2"></div>
+  <div class="bar3"></div>
+  <div class="bar4"></div>
+</div>
+</div>
+
+<!-- Background image -->
+
+<style>
+body, html {
+  height: 100%;
+  margin: 0;
+
+}
+.bgimg {
+  background-image: url(https://thepawprintdaa.files.wordpress.com/2016/12/winter-wonderland.jpg);
+  height: 100%;
+  background-position: center;
+  background-size: cover;
+  position: relative;
+  color: Black;text-shadow:4px 4px 5px #ffffff;
+  font-family: "Courier New", Courier, monospace;
+  font-size: 25px;
+}
+
+.topleft {
+  position: absolute;
+  top: 0;
+  left: 16px;
+}
+
+.bottomleft {
+  position: absolute;
+  bottom: 0;
+  left: 16px;
+}
+
+.middle {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  text-align: center;
+}
+
+hr {
+  margin: auto;
+  width: 40%;
+}
+</style>
+
+<!-- Countdown timer -->
+
+
+<script>
+// Set the date
+var countDownDate = new Date("November 4, 2019 9:00:00").getTime();
+
+// Update the count down every 1 second
+var countdownfunction = setInterval(function() {
+ // Get date and time
+  var now = new Date().getTime();
+  // Find the distance between now an the count down date
+  var distance = countDownDate - now;
+ 
+  // Time calculations for days, hours, minutes and seconds
+  var days = Math.floor(distance / (1000 * 60 * 60 * 24));
+  var hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+  var minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+  var seconds = Math.floor((distance % (1000 * 60)) / 1000);
+  
+  // Output the result in an element with id="demo"
+  document.getElementById("demo").innerHTML = days + "d " + hours + "h "
+  + minutes + "m " + seconds + "s ";
+  
+  // If the count down is over, write some text 
+  if (distance < 0) {
+    clearInterval(countdownfunction);
+    document.getElementById("demo").innerHTML = "EXPIRED";
+  }
+}, 1000);
+</script>
+
+
+<!-- Animation button that looks cool but has no purpose -->
+
+<
+<!-- <audio controls> -->
+	<!-- <source src="C:\Users\ryan-\Downloads\Swooshing-SoundBible.com-1214884243.mp3" type="audio/mpeg"> -->
+
+<!-- </audio> -->
+
+<script>
+function myFunction1(x) {
+  x.classList.toggle("change");
+}
+</script>
+<style>
+
+.container1 {
+  display: inline-block;
+  cursor: pointer;
+   position: absolute;
+  top: 65%;
+  left: 48%;
+ 
+}
+/*setting the colour and size of the menu bars and also the time of the animation */
+
+.bar1, .bar2, .bar3, .bar4 {
+  width: 35px;
+  height: 5px;
+  background-color: #333;
+  margin: 6px 0;
+  transition: 2.0s;
+}
+.bar2{
+background-color:grey;
+}
+.bar3{
+background-color:darkgrey;
+}
+ .bar4{
+   background-color:lightgrey;
+ }
+/*the angle of animation of lines for two of the bars. 
+setting one bar to go invisable */
+
+.change .bar1 {
+  -webkit-transform: rotate(360deg) translate(9px, 7px);
+  transform:rotate(360deg) translate(9px, 7px);
+  transition:2.5s;
+  background-color:black;
+}
+.change .bar2 {
+  -webkit-transform: rotate(360deg) translate(9px, 7px);
+  transform: rotate(360deg) translate(9px, 7px);
+
+  transition:2.2s;
+}
+.change .bar3 {
+  -webkit-transform: rotate(360deg) translate(9px, 7px);
+  transform: rotate(360deg) translate(9px, 7px);
+  transition:1.9s;
+
+}
+.change .bar4 {
+  -webkit-transform: rotate(360deg) translate(9px, 7px);
+  transform: rotate(360deg) translate(9px, 7px);
+  transition:1.2s
+  background-color:lightgrey;
+}
+
+
+}
+</style>
+</body>
+</html>

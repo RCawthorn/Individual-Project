@@ -1,0 +1,88 @@
+ 
+ /* BACKGROUND IMAGE */
+ body,
+ html {
+      font-family: Arial height:100%;
+      margin:0;
+    }
+
+    .bg {
+      /* The image used */
+      background-image: url("https://villagehotelfcblog.files.wordpress.com/2016/09/img_1202.jpg");
+
+      /* Full height */
+      height: 50%;
+
+      /* Center and scale the image */
+      background-position: center;
+      background-repeat: no-repeat;
+      background-size: cover;
+	}
+	
+	
+	/* Drop down menu styling */
+	
+	
+	      body {
+        background-color: black;
+      }
+
+      .L1 {
+        color: rgb(255, 255, 255);
+        font-size: 40px;
+        position: absolute;
+        left: 400px;
+      }
+
+      .font {
+        font-family: Arial;
+        background-color: #0f730b;
+      }
+
+      .dropbtn {
+        font-family: Arial;
+        background-color: #0f730b;
+        color: white;
+        padding: 16px;
+        font-size: 16px;
+        border: none;
+        cursor: pointer;
+
+      }
+
+      .dropbtn:hover,
+      .dropbtn:focus {
+        background-color: #179e11;
+      }
+
+      .dropdown {
+        position: relative;
+        display: inline-block;
+      }
+
+      .dropdown-content {
+        font-family: Arial;
+        display: none;
+        position: absolute;
+
+        min-width: 160px;
+        overflow: auto;
+        box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+        z-index: 1;
+      }
+
+      .dropdown-content a {
+        font-family: Arial;
+        color: black;
+        padding: 12px 16px;
+        text-decoration: none;
+        display: block;
+      }
+
+      .dropdown a:hover {
+        background-color: #179e11;
+      }
+
+      .show {
+        display: block;
+      }
