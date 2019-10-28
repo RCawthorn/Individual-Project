@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html>
+<head>
+</head>
+<body>
+
+<div class="row">
+ <div class="column">
+    <img src="https://villagehotelfcblog.files.wordpress.com/2016/09/img_1202.jpg" alt="village" style="width:100%">
+  </div>
+  <div class="column">
+    <img src="https://g.otcdn.com/imglib/hotelfotos/8/086/village-hotel-swindon-030.jpg" alt="sign" style="width:100%">
+  </div>
+  <div class="column">
+    <img src="https://villagehotelfcblog.files.wordpress.com/2016/09/img_1202.jpg" alt="village" style="width:100%">
+  </div>
+</div>
+
+	    <div class="dropdown">
+        <font face="courier">
+            <button onclick="myFunction()" class="dropbtn">Menu</button>
+            <div id="myDropdown" class="dropdown-content">
+                <a class="font" href="Front.html">Home</a>
+                <a class="dropbtn" href="Booking.html">Bookings</a>
+				 <a class = "dropbtn" onclick="window.location.href = 'https://www.village-hotels.co.uk/';">Village Hotel</a>
+        </font>
+    </div>
+</div>
+<div class = "Contact">
+   <label for="Contact us" style="color:White;"><b><U>Contact us </b></U></label>
+   <BR>
+  </div>
+  <div class ="Text" >
+   <span style = "color:white;font-size:16px;">
+   You can email us here at: Thisisafakemail@hotmail.co.uk
+   <BR>
+   Hotels contact number: 01793279470
+   <BR>
+   Or you may write to us at: <BR>
+Village Hotels & Leisure Ltd <BR>
+1st Floor Lakeview,<BR>
+600 Lakeside Drive,<BR>
+Centre Park, <BR>
+Warrington,<BR>
+WA1 1RW 
+   </div>
+</body>
+<style>
+      body,
+        html {
+            font-family: Arial
+            height: 100%;
+            margin: 0;
+            background-color: black;
+        }
+* {
+  box-sizing: border-box;
+}
+
+.column {
+  float: left;
+  width: 33.33%;
+  padding: 5px;
+}
+.Contact{
+font-family: Arial;
+font-size:36px;
+position:absolute;
+top:60%;
+left:40%;
+}
+.Text{
+font-family: Arial;
+position:absolute;
+top:70%;
+left:35%;
+}   
+
+.font {
+        font-family: Arial;
+		font-size:16px;
+        background-color: #0f730b;
+    }
+
+    .dropbtn {
+        font-family: Arial;
+        background-color: #0f730b;
+        color: white;
+        padding: 16px;
+        font-size: 16px;
+        border: none;
+        cursor: pointer;
+
+    }
+
+    .dropbtn:hover,
+    .dropbtn:focus {
+        background-color: #179e11;
+    }
+
+    .dropdown {
+        position: relative;
+        display: inline-block;
+		position:absolute;
+		top:40%;
+		left:0%;
+    }
+
+    .dropdown-content {
+        background-color: #0f730b;
+        font-family: Arial;
+        display: none;
+        position: absolute;
+
+        min-width: 160px;
+        overflow: auto;
+        box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+        z-index: 1;
+    }
+
+    .dropdown-content a {
+        font-family: Arial;
+        color: black;
+        padding: 12px 16px;
+        text-decoration: none;
+        display: block;
+    }
+
+    .dropdown a:hover {
+        background-color: #179e11;
+    }
+
+    .show {
+        display: block;
+    }
+</style>
+<script>
+    /* When the user clicks on the button,
+    toggle between hiding and showing the dropdown content */
+    function myFunction() {
+        document.getElementById("myDropdown").classList.toggle("show");
+    }
+
+    // Close the dropdown if the user clicks outside of it
+    window.onclick = function (event) {
+        if (!event.target.matches('.dropbtn')) {
+            var dropdowns = document.getElementsByClassName("dropdown-content");
+            var i;
+            for (i = 0; i < dropdowns.length; i++) {
+                var openDropdown = dropdowns[i];
+                if (openDropdown.classList.contains('show')) {
+                    openDropdown.classList.remove('show');
+                }
+            }
+        }
+    }
+</script>
+</html>

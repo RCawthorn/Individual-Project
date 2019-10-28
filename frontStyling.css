@@ -1,0 +1,120 @@
+/* BACKGROUND IMAGE */
+body,
+html {
+    font-family: Arial
+    height: 100%;
+    margin: 0;
+}
+
+.bg {
+    /* The image used */
+    background-image: url("https://villagehotelfcblog.files.wordpress.com/2016/09/img_1202.jpg");
+
+    /* Full height */
+    height: 50%;
+
+    /* Center and scale the image */
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+
+/* Drop down menu styling */
+
+
+body {
+    background-color: black;
+}
+   .font {
+        font-family: Arial;
+		font-size:16px;
+        background-color: #0f730b;
+    }
+
+    .dropbtn {
+        font-family: Arial;
+        background-color: #0f730b;
+        color: white;
+        padding: 16px;
+        font-size: 16px;
+        border: none;
+        cursor: pointer;
+
+    }
+
+    .dropbtn:hover,
+    .dropbtn:focus {
+        background-color: #179e11;
+    }
+
+    .dropdown {
+        position: relative;
+        display: inline-block;
+    }
+
+    .dropdown-content {
+        background-color: #0f730b;
+        font-family: Arial;
+        display: none;
+        position: absolute;
+
+        min-width: 160px;
+        overflow: auto;
+        box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+        z-index: 1;
+    }
+
+    .dropdown-content a {
+        font-family: Arial;
+        color: black;
+        padding: 12px 16px;
+        text-decoration: none;
+        display: block;
+    }
+
+    .dropdown a:hover {
+        background-color: #179e11;
+    }
+
+    .show {
+        display: block;
+    }
+<!-- /*Crosses ANIMATION */ -->
+
+<style>
+
+
+    .container1 {
+        display: inline-block;
+        cursor: pointer;
+    }
+
+    <!-- /*setting the colour and size of the menu bars and also the time of the animation */
+    -->
+
+    .bar1, .bar2, .bar3 {
+        width: 35px;
+        height: 5px;
+        background-color: rgb(247, 243, 4);
+        margin: 6px 0;
+        transition: 2.2s;
+    }
+
+    <!--
+    /*the angle of animation of lines for two of the bars.  -->
+           <!-- setting one bar to go invisable */
+    -->
+
+    .change .bar1 {
+        -webkit-transform: rotate(-45deg) translate(-9px, 6px);
+        transform: rotate(-45deg) translate(-9px, 6px);
+    }
+
+    .change .bar2 {
+        opacity: 0;
+    }
+
+    .change .bar3 {
+        -webkit-transform: rotate(45deg) translate(-8px, -8px);
+        transform: rotate(45deg) translate(-8px, -8px);
