@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html>
+<head>
+<style>
+#customers {
+  font-family: "Trebuchet MS", Arial, Helvetica, sans-serif;
+  border-collapse: collapse;
+  width: 50%;
+}
+
+#customers td, #customers th {
+  border: 1px solid #ddd;
+  padding: 8px;
+}
+
+#customers tr:nth-child(even){background-color: #f2f2f2;}
+
+#customers tr:hover {background-color: #ddd;}
+
+#customers th {
+  padding-top: 12px;
+  padding-bottom: 12px;
+  text-align: left;
+  background-color: #4CAF50;
+  color: white;
+}
+.input{
+position:absolute;
+left:700px;
+}
+
+.container{
+}
+</style>
+</head>
+<body>
+
+<table id="customers">
+  <tr id="trow">
+    <th>First name</th>
+    <th>Last name</th>
+    <th>Room number</th>
+	<th>Time booked</th>
+  </tr>
+ 
+</table>
+<div class = "input">
+<B>Please input details to book a time slot</B><BR>
+First name: <input ="text" id = "first"><BR>
+Second name: <input ="text" id = "last"><BR>
+Room number: <input ="Text" id = "room"><BR>
+Time booked: <input ="Text" id ="time"><BR>
+
+<div class="container">
+            <button type="button" onclick="userAdd()">Submit
+            </button>
+			</div></div>
+			<script>	
+			
+let userAdd = function(){
+        console.log("helloo");
+        const Http = new XMLHttpRequest();
+        const url='http://localhost:8080/Save';
+        Http.open("POST", url);
+        Http.setRequestHeader("Content-Type", "application/json");
+        
+        const fd = {
+                "firstname":  document.getElementById('first').value,
+                "lastname": document.getElementById('last').value,
+                "room":  document.getElementById('room').value,
+                "timeslot":  document.getElementById('time').value,
+
+        };
+
+        alert(fd.timeslot);
+        Http.onload = function(){
+            console.log("hello");
+            console.log(Http.response);
+			var tr=document.createElement("tr");
+			var td1=document.createElement("td");
+			var td2=document.createElement("td");
+			var td3=document.createElement("td");
+			var td4=document.createElement("td");
+			var firstname=document.createElement("span");
+			var lastname=document.createElement("span");
+			let room=document.createElement("span");
+			let timebooked=document.createElement("span");
+			
+			firstname.innerHTML=fd.firstname;
+			lastname.innerHTML=fd.lastname;
+			room.innerHTML=fd.room;
+			timebooked.innerHTML=fd.timeslot;
+			
+			
+			td1.appendChild(firstname);
+			td2.appendChild(lastname);
+			td3.appendChild(room);
+			td4.appendChild(timebooked);
+			
+			
+			tr.appendChild(td1);
+			tr.appendChild(td2);
+			tr.appendChild(td3);
+			tr.appendChild(td4);
+			
+			
+			document.getElementById("customers").appendChild(tr);
+			
+            //after call getall
+        }
+            Http.send(JSON.stringify(fd))
+        }
+			
+			
+			</script>
+</body>
+</html>
