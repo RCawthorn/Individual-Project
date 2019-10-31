@@ -1,7 +1,17 @@
 <!DOCTYPE html>
 <html>
 <head>
+<div class = "background" >
 <style>
+body, html{
+background-color:black;
+}
+.background{
+background:black;
+}
+.body{
+background-color:black;
+}
 #customers {
   font-family: "Trebuchet MS", Arial, Helvetica, sans-serif;
   border-collapse: collapse;
@@ -27,10 +37,21 @@
 .input{
 position:absolute;
 left:700px;
+color:white;
+background-color:black;
+ border: 2px solid White;
 }
 
 .container{
+background-color:black;
 }
+.home{
+position:absolute;
+top:40%;
+left:55%;
+color:white;
+}
+
 </style>
 </head>
 <body>
@@ -41,6 +62,7 @@ left:700px;
     <th>Last name</th>
     <th>Room number</th>
 	<th>Time booked</th>
+	<th></th>
   </tr>
  
 </table>
@@ -55,8 +77,12 @@ Time booked: <input ="Text" id ="time"><BR>
             <button type="button" onclick="userAdd()">Submit
             </button>
 			</div></div>
-			<script>	
+		
 			
+			 <a class="home" href="Front.html">Home</a>
+			 	</div>
+			<script>	
+		
 let userAdd = function(){
         console.log("helloo");
         const Http = new XMLHttpRequest();
@@ -81,28 +107,42 @@ let userAdd = function(){
 			var td2=document.createElement("td");
 			var td3=document.createElement("td");
 			var td4=document.createElement("td");
+			var td5=document.createElement("td");
 			var firstname=document.createElement("span");
 			var lastname=document.createElement("span");
 			let room=document.createElement("span");
 			let timebooked=document.createElement("span");
-			
+			let deleteButton=document.createElement("button");
+			deleteButton.id=fd.timeslot;
+			deleteButton.type="button";
+			deleteButton.onclick = function() {
+
+           const Http = new XMLHttpRequest();
+        const url='http://localhost:8080/Delete/' + this.id;
+        Http.open("DELETE", url);
+        Http.setRequestHeader("Content-Type", "application/json");
+            Http.onreadystatechange = function(ev){
+            }
+            Http.send();
+            location.reload();
+        }
 			firstname.innerHTML=fd.firstname;
 			lastname.innerHTML=fd.lastname;
 			room.innerHTML=fd.room;
 			timebooked.innerHTML=fd.timeslot;
-			
+
 			
 			td1.appendChild(firstname);
 			td2.appendChild(lastname);
 			td3.appendChild(room);
 			td4.appendChild(timebooked);
-			
+			td5.appendChild(deleteButton);
 			
 			tr.appendChild(td1);
 			tr.appendChild(td2);
 			tr.appendChild(td3);
 			tr.appendChild(td4);
-			
+			tr.appendChild(td5);
 			
 			document.getElementById("customers").appendChild(tr);
 			
@@ -110,7 +150,8 @@ let userAdd = function(){
         }
             Http.send(JSON.stringify(fd))
         }
-			
+		
+		
 			
 			</script>
 </body>
