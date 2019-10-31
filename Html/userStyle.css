@@ -1,0 +1,95 @@
+/* Styling sheet of css for the user page. */
+        body {
+            font-family: Arial;
+        }
+
+        .data-input {
+            font-size: 22px;
+            position: absolute;
+
+            top: 65%;
+
+        }
+
+        .first {
+            font-family: Arial;
+
+            border: 1px solid #b300b3;
+        }
+
+        .contact {
+            font-size: 22px;
+            position: absolute;
+            left: 50%;
+            top: 65%;
+        }
+
+
+      /*   Box annimations and sizing. This is also where you can change the speed of the animation. */
+        .box-1 {
+            background: #b3b3cc;
+            border-radius: 4px;
+            cursor: pointer;
+            height: 65px;
+            line-height: 65px;
+            text-align: center;
+            transition-property:background, border-radius;
+            transition-duration: 1s;
+            transition-timing-function: linear;
+            width: 65px;
+            position: absolute;
+            top: 88%;
+            left: 10%;
+
+
+        }
+
+        .box-1:hover {
+            background: Red;
+            border-radius: 60%;
+        }
+
+        .box-2 {
+            background: #b3b3cc;
+            border-radius: 4px;
+            cursor: pointer;
+            height: 65px;
+            line-height: 65px;
+            text-align: center;
+            transition-property: background, border-radius;
+            transition-duration: 1s;
+            transition-timing-function: linear;
+            width: 65px;
+            position: absolute;
+            top: 88%;
+        }
+
+        .box-2:hover {
+            background: Green;
+            border-radius: 60%;
+        }
+
+        hr {
+            margin: auto;
+            width: 99%;
+        }
+
+
+        /* Radio  button positioning and styling */
+        <style>
+        .radio1 {
+            position: absolute;
+            left: 300px;
+        }
+
+        .checkmark {
+            position: absolute;
+            left: 300px;
+        }
+.vl {
+  border-left: 3px solid white;
+  height: 300px;
+  position:absolute;
+  left:575px;
+}
+<style>

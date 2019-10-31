@@ -1,6 +1,8 @@
 <HTML>
 <head>
-    <link rel="stylesheet" type="text/css" href="frontStyling.css">
+    <link rel="stylesheet" type="text/css" href="userStyle.css">
+            <link rel="stylesheet" type="text/css" href="TableStyle.css">
+
 </head>
 
 <head>
@@ -50,25 +52,29 @@
         }
 
     </style>
-	
+	<!-- Border line to seperate -->
     <hr>
     <hr>	
 	<body>
 <div class="vl"></div>
 </body>
-
+<!-- Menu dropdown with links -->
 	    <div class="dropdown">
-
-        <font face="courier">
-            <button onclick="myFunction()" class="dropbtn">Menu</button>
-            <div id="myDropdown" class="dropdown-content">
-                <a class="font" href="Front.html">Home</a>
-                <a class="dropbtn" href="Booking.html">Bookings</a>
-				 <a class = "dropbtn" onclick="window.location.href = 'https://www.village-hotels.co.uk/';">Village Hotel</a>
-				 <a class = "dropbtn" href = "Contact.html">Contact us</a>
-        </font>
+                <font face="courier">
+                        <button onclick="myFunction()" class="dropbtn">Menu</button>
+                        <div id="myDropdown" class="dropdown-content">
+                            <a class="font" href="Front.html">Home</a>
+                            <a class = "dropbtn" href = "Table.html">Laudry Bookings</a>
+                            <a class="dropbtn" href="Booking.html">Room Bookings</a>
+                             <a class = "dropbtn" onclick="window.location.href = 'https://www.village-hotels.co.uk/';">Village Hotel</a>
+                             <a class="dropbtn" href="ContactUs.html">Contact us</a>
+                            </font>
+                
     </div>
 </div>
+
+<!-- The Style section for entry form section to create an account.
+ -->
 	<form onsubmit = "return postData(this)">
     <div class="data-input">
         <label for="Firstname" style="color:White"><b>First Name: </b></label>
@@ -109,95 +115,5 @@
 	
 	<html>
 
-    <style>
-        body {
-            font-family: Arial;
-        }
-
-        .data-input {
-            font-size: 22px;
-            position: absolute;
-
-            top: 65%;
-
-        }
-
-        .first {
-            font-family: Arial;
-
-            border: 1px solid #b300b3;
-        }
-
-        .contact {
-            font-size: 22px;
-            position: absolute;
-            left: 50%;
-            top: 65%;
-        }
-
-        .box-1 {
-            background: #b3b3cc;
-            border-radius: 4px;
-            cursor: pointer;
-            height: 65px;
-            line-height: 65px;
-            text-align: center;
-            transition-property: background, border-radius;
-            transition-duration: 2s;
-            transition-timing-function: linear;
-            width: 65px;
-            position: absolute;
-            top: 88%;
-            left: 10%;
-
-
-        }
-
-        .box-1:hover {
-            background: Red;
-            border-radius: 60%;
-        }
-
-        .box-2 {
-            background: #b3b3cc;
-            border-radius: 4px;
-            cursor: pointer;
-            height: 65px;
-            line-height: 65px;
-            text-align: center;
-            transition-property: background, border-radius;
-            transition-duration: 2s;
-            transition-timing-function: linear;
-            width: 65px;
-            position: absolute;
-            top: 88%;
-        }
-
-        .box-2:hover {
-            background: Green;
-            border-radius: 60%;
-        }
-
-        hr {
-            margin: auto;
-            width: 99%;
-        }
-
-        <style>
-        .radio1 {
-            position: absolute;
-            left: 300px;
-        }
-
-        .checkmark {
-            position: absolute;
-            left: 300px;
-        }
-.vl {
-  border-left: 3px solid white;
-  height: 300px;
-  position:absolute;
-  left:575px;
-}
-</style>
+  
 </HTML>
