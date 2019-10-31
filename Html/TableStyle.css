@@ -1,33 +1,27 @@
-<html>
-<style>
+
 /* BACKGROUND IMAGE */
-body,
-html {
-    font-family: Arial
-    height: 100%;
+body, html {
+    height:100%;
     margin: 0;
+}
+
+body {
+    background-color: black;
 }
 
 .bg {
     /* The image used */
     background-image: url("https://villagehotelfcblog.files.wordpress.com/2016/09/img_1202.jpg");
-
     /* Full height */
-    height: 50%;
-
+    height: 55%;
     /* Center and scale the image */
     background-position: center;
     background-repeat: no-repeat;
-    background-size:100%;
+    background-size:90%;
 }
-
 
 /* Drop down menu styling */
 
-
-body {
-    background-color: black;
-}
    .font {
         font-family: Arial;
 		font-size:16px;
@@ -82,22 +76,23 @@ body {
     .show {
         display: block;
     }
+
 #customers {
   font-family: "Trebuchet MS", Arial, Helvetica, sans-serif;
   border-collapse: collapse;
   width: 50%;
   position:absolute;
-  top:70%;
-  left:25%;
+  top:80%;
+  float:left;
 }
 
 #customers td, #customers th {
   border: 2px solid #d9d9d9;
-  padding: 8px;
+  padding: 6px;
 }
 
-#customers tr:nth-child(even){background-color: #f2f2f2;}
-#customers tr:nth-child(odd){background-color: #f2f2f2;}
+#customers tr:nth-child(even){background-color:  #cccccc;}
+#customers tr:nth-child(odd){background-color: White;}
 #customers tr:hover {background-color: #ddd;}
 
 
@@ -105,26 +100,21 @@ body {
   padding-top: 12px;
   padding-bottom: 12px;
   text-align: left;
-  background-color: #4CAF50;
+  background-color: #0f730b;
   color: white;
 }
+
 .input{
+	
 position:absolute;
-left:40%;
-top:45%;
+width:25%;
+height:relative;
+left:65%;
+top:66%;
 color:white;
  border: 2px solid White;
 }
 
 .container{
-/* background-color:black; */
+background-color:black;
 }
-.home{
-position:absolute;
-top:40%;
-left:55%;
-color:white;
-}
-
-</style>
-</html>

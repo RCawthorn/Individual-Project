@@ -1,138 +1,167 @@
-<!DOCTYPE html>
 <html>
-<Head>
-    <link rel="stylesheet" type="text/css" href="TableStyle.css">
-</head>
-<body> 
 
-<div class="bg">
-<div class="dropdown">
-    <font face="courier">
+<Head>
+  <link rel="stylesheet" type="text/css" href="TableStyle.css">
+</head>
+
+<body onload="getData()">
+
+  <div class="bg">
+    <div class="dropdown">
+      <font face="courier">
         <button onclick="myFunction()" class="dropbtn">Menu</button>
         <div id="myDropdown" class="dropdown-content">
-            <a class="font" href="Front.html">Home</a>
-            <a class="dropbtn" href="Booking.html">Bookings</a>
-			<a class = "dropbtn" onclick="document.getElementById('id01').style.display='block'">Login</a>
-			<a class = "dropbtn" href = "ContactUs.html">Contact us</a>
-			<a class = "dropbtn" href = "Table.html">Table</a>
-    </font>
-</div>
-</div>
+          <a class="font" href="Front.html">Home</a>
+          <a class="dropbtn" href="Booking.html">Bookings</a>
+          <a class="dropbtn" onclick="document.getElementById('id01').style.display='block'">Login</a>
+          <a class="dropbtn" href="ContactUs.html">Contact us</a>
+          <a class="dropbtn" href="Table.html">Table</a>
+      </font>
+    </div>
+  </div>
 
-    <script>
-        /* When the user clicks on the button,
-        toggle between hiding and showing the dropdown content */
-        function myFunction() {
-            document.getElementById("myDropdown").classList.toggle("show");
+
+
+  <table id="customers">
+    <thead>
+      <tr id="trow">
+        <th>First name</th>
+        <th>Last name</th>
+        <th>Room number</th>
+        <th>Time booked</th>
+        <th>Delete</th>
+      </tr>
+    </thead>
+    <tbody id="customersInfo">
+
+    </tbody>
+  </table>
+
+  <div class="input">
+    <B>Please input details to book a time slot</B><BR><BR>
+    First name: <input type="text" style="float:right;background-color:#0f730b;" id="first"><BR>
+    Second name: <input type="text" style="float:right;background-color:#0f730b;" id="last"><BR>
+    Room number: <input type="number" min=0 max=100 style="float:right;background-color:#0f730b;" id="room"><BR>
+    Time booked: <input type="number" min=8 max=22 style="float:right;background-color:#0f730b;" id="time"><BR><BR>
+
+    <div class="container">
+      <button type="button" onclick="userAdd()">Submit</button>
+    </div>
+  </div>
+
+  <script>
+    /* When the user clicks on the button,
+    toggle between hiding and showing the dropdown content */
+    function myFunction() {
+      document.getElementById("myDropdown").classList.toggle("show");
+    }
+
+    // Close the dropdown if the user clicks outside of it
+    window.onclick = function (event) {
+      if (!event.target.matches('.dropbtn')) {
+        var dropdowns = document.getElementsByClassName("dropdown-content");
+        var i;
+        for (i = 0; i < dropdowns.length; i++) {
+          var openDropdown = dropdowns[i];
+          if (openDropdown.classList.contains('show')) {
+            openDropdown.classList.remove('show');
+          }
         }
+      }
+    }
+  </script>
 
-        // Close the dropdown if the user clicks outside of it
-        window.onclick = function (event) {
-            if (!event.target.matches('.dropbtn')) {
-                var dropdowns = document.getElementsByClassName("dropdown-content");
-                var i;
-                for (i = 0; i < dropdowns.length; i++) {
-                    var openDropdown = dropdowns[i];
-                    if (openDropdown.classList.contains('show')) {
-                        openDropdown.classList.remove('show');
-                    }
-                }
-            }
-        }
-    </script>
-<table id="customers">
-  <tr id="trow">
-    <th>First name</th>
-    <th>Last name</th>
-    <th>Room number</th>
-	<th>Time booked</th>
-	<th></th>
-  </tr>
-</table>
-<div class = "input">
-<B>Please input details to book a time slot</B><BR>
-First name: <input ="text" id = "first"><BR>
-Second name: <input ="text" id = "last"><BR>
-Room number: <input ="Text" id = "room"><BR>
-Time booked: <input ="Text" id ="time"><BR>
+  <script>
 
-<div class="container">
-            <button type="button" onclick="userAdd()">Submit
-            </button>
-			</div>
-			 </div>
-			<script>	
-	
-let userAdd = function(){
-        console.log("helloo");
-        const Http = new XMLHttpRequest();
-        const url='http://localhost:8080/Save';
-        Http.open("POST", url);
-        Http.setRequestHeader("Content-Type", "application/json");
-        
-        const fd = {
-                "firstname":  document.getElementById('first').value,
-                "lastname": document.getElementById('last').value,
-                "room":  document.getElementById('room').value,
-                "timeslot":  document.getElementById('time').value,
+    let userAdd = function () {
+      console.log("helloo");
+      const Http = new XMLHttpRequest();
+      const url = 'http://localhost:8080/Save';
+      Http.open("POST", url);
+      Http.setRequestHeader("Content-Type", "application/json");
 
-        };
+      const fd = {
+        "firstname": document.getElementById('first').value,
+        "lastname": document.getElementById('last').value,
+        "room": document.getElementById('room').value,
+        "timeslot": document.getElementById('time').value,
 
-        alert(fd.timeslot);
-        Http.onload = function(){
-            console.log("hello");
-            console.log(Http.response);
-			var tr=document.createElement("tr");
-			var td1=document.createElement("td");
-			var td2=document.createElement("td");
-			var td3=document.createElement("td");
-			var td4=document.createElement("td");
-			var td5=document.createElement("td");
-			var firstname=document.createElement("span");
-			var lastname=document.createElement("span");
-			let room=document.createElement("span");
-			let timebooked=document.createElement("span");
-			let deleteButton=document.createElement("button");
-			deleteButton.id=fd.timeslot;
-			deleteButton.type="button";
-			deleteButton.onclick = function() {
+      };
 
-           const Http = new XMLHttpRequest();
-        const url='http://localhost:8080/Delete/' + this.id;
-        Http.open("DELETE", url);
-        Http.setRequestHeader("Content-Type", "application/json");
-            Http.onreadystatechange = function(ev){
-            }
-            Http.send();
-            location.reload();
-        }
-			firstname.innerHTML=fd.firstname;
-			lastname.innerHTML=fd.lastname;
-			room.innerHTML=fd.room;
-			timebooked.innerHTML=fd.timeslot;
+      alert(fd.timeslot);
+      Http.onload = function () {
+        getData();
+      }
+      Http.send(JSON.stringify(fd))
+    }
 
-			
-			td1.appendChild(firstname);
-			td2.appendChild(lastname);
-			td3.appendChild(room);
-			td4.appendChild(timebooked);
-			td5.appendChild(deleteButton);
-			
-			tr.appendChild(td1);
-			tr.appendChild(td2);
-			tr.appendChild(td3);
-			tr.appendChild(td4);
-			tr.appendChild(td5);
-			
-			document.getElementById("customers").appendChild(tr);
+    function getData() {
+      console.log("data sending");
+      const Http = new XMLHttpRequest();
+      const url = 'http://' + location.hostname + ':8080/findAll';
+      Http.open("GET", url);
+      Http.onload = function (e) {
+        console.log("data got")
+        data = JSON.parse(Http.responseText);
+        renderTableWithData(data);
+      }
+      Http.send();
+    }
 
-        }
-            Http.send(JSON.stringify(fd))
-        }
-		
-		
-			
-			</script>
-			</head>
+
+    getData();
+
+    function deleteByID(id) {
+      const Http = new XMLHttpRequest();
+      const url = 'http://' + location.hostname + ':8080/Delete/' + id;
+      Http.open("DELETE", url);
+      Http.setRequestHeader("Content-Type", "application/json");
+      Http.onload = function () {
+        console.log("data deleted")
+        getData();
+      }
+      Http.send();
+    }
+
+    function renderTableWithData(data) {
+      console.log("preparing to render")
+      var table = document.getElementById("customersInfo");
+      table.innerHTML = "";
+      data.forEach(function (item) {
+        console.log("rendering item")
+        let row = document.createElement("tr");
+        let firstName = document.createElement("td");
+        firstName.innerText = item.firstname;
+        let lastName = document.createElement("td");
+        lastName.innerText = item.lastname;
+        let roomNumber = document.createElement("td");
+        roomNumber.innerText = item.room;
+        let timeSlot = document.createElement("td");
+        timeSlot.innerText = item.timeslot;
+
+        let buttonCell = document.createElement("td");
+        let button = document.createElement("button");
+        button.innerText = "Delete";
+        button.addEventListener("click", function () {
+          deleteByID(item.timeslot);
+        })
+
+        buttonCell.appendChild(button);
+
+        row.appendChild(firstName);
+        row.appendChild(lastName);
+        row.appendChild(roomNumber);
+        row.appendChild(timeSlot);
+        row.appendChild(buttonCell)
+        table.appendChild(row);
+      });
+    }
+
+
+
+
+  </script>
+  </head>
 </body>
+
 </html>
