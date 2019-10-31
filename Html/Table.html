@@ -1,61 +1,45 @@
 <!DOCTYPE html>
 <html>
-<head>
-<div class = "background" >
-<style>
-body, html{
-background-color:black;
-}
-.background{
-background:black;
-}
-.body{
-background-color:black;
-}
-#customers {
-  font-family: "Trebuchet MS", Arial, Helvetica, sans-serif;
-  border-collapse: collapse;
-  width: 50%;
-}
-
-#customers td, #customers th {
-  border: 1px solid #ddd;
-  padding: 8px;
-}
-
-#customers tr:nth-child(even){background-color: #f2f2f2;}
-
-#customers tr:hover {background-color: #ddd;}
-
-#customers th {
-  padding-top: 12px;
-  padding-bottom: 12px;
-  text-align: left;
-  background-color: #4CAF50;
-  color: white;
-}
-.input{
-position:absolute;
-left:700px;
-color:white;
-background-color:black;
- border: 2px solid White;
-}
-
-.container{
-background-color:black;
-}
-.home{
-position:absolute;
-top:40%;
-left:55%;
-color:white;
-}
-
-</style>
+<Head>
+    <link rel="stylesheet" type="text/css" href="TableStyle.css">
 </head>
-<body>
+<body> 
 
+<div class="bg">
+<div class="dropdown">
+    <font face="courier">
+        <button onclick="myFunction()" class="dropbtn">Menu</button>
+        <div id="myDropdown" class="dropdown-content">
+            <a class="font" href="Front.html">Home</a>
+            <a class="dropbtn" href="Booking.html">Bookings</a>
+			<a class = "dropbtn" onclick="document.getElementById('id01').style.display='block'">Login</a>
+			<a class = "dropbtn" href = "ContactUs.html">Contact us</a>
+			<a class = "dropbtn" href = "Table.html">Table</a>
+    </font>
+</div>
+</div>
+
+    <script>
+        /* When the user clicks on the button,
+        toggle between hiding and showing the dropdown content */
+        function myFunction() {
+            document.getElementById("myDropdown").classList.toggle("show");
+        }
+
+        // Close the dropdown if the user clicks outside of it
+        window.onclick = function (event) {
+            if (!event.target.matches('.dropbtn')) {
+                var dropdowns = document.getElementsByClassName("dropdown-content");
+                var i;
+                for (i = 0; i < dropdowns.length; i++) {
+                    var openDropdown = dropdowns[i];
+                    if (openDropdown.classList.contains('show')) {
+                        openDropdown.classList.remove('show');
+                    }
+                }
+            }
+        }
+    </script>
 <table id="customers">
   <tr id="trow">
     <th>First name</th>
@@ -64,7 +48,6 @@ color:white;
 	<th>Time booked</th>
 	<th></th>
   </tr>
- 
 </table>
 <div class = "input">
 <B>Please input details to book a time slot</B><BR>
@@ -76,13 +59,10 @@ Time booked: <input ="Text" id ="time"><BR>
 <div class="container">
             <button type="button" onclick="userAdd()">Submit
             </button>
-			</div></div>
-		
-			
-			 <a class="home" href="Front.html">Home</a>
-			 	</div>
+			</div>
+			 </div>
 			<script>	
-		
+	
 let userAdd = function(){
         console.log("helloo");
         const Http = new XMLHttpRequest();
@@ -145,8 +125,7 @@ let userAdd = function(){
 			tr.appendChild(td5);
 			
 			document.getElementById("customers").appendChild(tr);
-			
-            //after call getall
+
         }
             Http.send(JSON.stringify(fd))
         }
@@ -154,5 +133,6 @@ let userAdd = function(){
 		
 			
 			</script>
+			</head>
 </body>
 </html>
