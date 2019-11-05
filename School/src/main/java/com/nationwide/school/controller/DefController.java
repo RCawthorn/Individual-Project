@@ -25,7 +25,6 @@ class DefController {
                 repo.save(u);
         return "Item Saved";
     }
-//eggs
 @DeleteMapping("/Delete/{Id}")
     public String deleteById(@PathVariable int Id){
     repo.deleteById(Id);
